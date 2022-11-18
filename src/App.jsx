@@ -1,11 +1,11 @@
-import {BrowserRouter, Route, Routes, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Home from './components/Home';
 import Cart from './components/Cart';
 import Description from './components/Description';
 function App() {
   
   return (
-    <BrowserRouter>
+    <Router>
         <Routes>
           <Route index path="/" element={<Home/>}/>
         </Routes>
@@ -15,8 +15,7 @@ function App() {
         <Routes>
           <Route path="/description" element={<Description/>}/>
         </Routes>
-    </BrowserRouter>
-
+    </Router>
   )
 }
 

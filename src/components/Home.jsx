@@ -2,18 +2,25 @@ import React from 'react'
 import Cart from './Cart';
 import Products from './Products';
 import './Home.css';
+import {Link} from 'react-router-dom';
 function Home() {
 
   return (
         <div className="container">
         <div className="navbar">
-            <ul>
-                    <li>
-                        <h1>Home</h1>
-                    </li>
-                    <li>
-                        <h1>Cart</h1>
-                    </li>
+            <ul>    
+                        <li>
+                        <Link to="/">
+                            <h1>Home</h1>
+                        </Link>
+                        </li>
+                    
+                        <li>
+                        <Link to="/Cart">
+                            <h1>Cart</h1>
+                        </Link>
+                        </li>
+                    
             </ul>    
         </div>
 

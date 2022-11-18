@@ -1,6 +1,9 @@
 import React from 'react'
+import { useState } from 'react'
 import './Cart.css'
+
 function Cart() {
+  const [count, setCount] = useState(1);
   return (
     <div className="cart-container">
       <div className="navbar">
@@ -26,7 +29,9 @@ function Cart() {
               <img src="https://images.unsplash.com/photo-1606406054219-619c4c2e2100?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="" />
               <h4>Italy Pizza</h4>
               <p>Extra Cheese</p>
-
+              <p>x{count}</p>
+              <button onClick={() => setCount(count + 1)}>+</button>
+              <button onClick={() => setCount(count - 1)}> - </button>
               <p>$68</p>
           </div>
           <div className="product-details">
