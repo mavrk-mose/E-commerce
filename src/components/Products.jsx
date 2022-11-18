@@ -14,7 +14,13 @@ function Products() {
     <div key={product.id} className="grid">
       {product.map((item) => (
                 <div className="product">
-                      <Link to="/Description">
+                      <Link to="/Description" state={{
+                product_id: item.id,
+                title: item.title,
+                price: item.price,
+                product_image: item.image,
+                description: item.description
+              }}>
                         <img src={item.image} alt="girl" />
                       </Link>    
                     <h3>{item.title}</h3>

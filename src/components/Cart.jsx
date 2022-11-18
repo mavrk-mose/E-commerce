@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import {Link} from 'react-router-dom';
 import './Cart.css'
 
 function Cart() {
@@ -19,7 +20,9 @@ function Cart() {
       <div className="cart-boxes">
         <div className="shopping-cart">
           <div className="cart-heading">
-            <h3>Continue Shopping</h3>
+            <Link to="/">
+              <h3>Continue Shopping</h3>
+            </Link>
           </div>
           <h4>Shopping cart</h4>
           <h5>You have 3 item in your cart</h5>
