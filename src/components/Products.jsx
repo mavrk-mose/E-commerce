@@ -1,8 +1,10 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
+
 function Products() {
   const [product, setProduct] = useState([]);
+
   //fetch data from the api with useEffect
   useEffect(() => {
       fetch('https://fakestoreapi.com/products')
@@ -14,13 +16,7 @@ function Products() {
     <div key={product.id} className="grid">
       {product.map((item) => (
                 <div className="product">
-                      <Link to="/Description" state={{
-                product_id: item.id,
-                title: item.title,
-                price: item.price,
-                product_image: item.image,
-                description: item.description
-              }}>
+                      <Link to="/Description">
                         <img src={item.image} alt="girl" />
                       </Link>    
                     <h3>{item.title}</h3>
