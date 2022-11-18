@@ -1,49 +1,25 @@
 import React from 'react';
-import axios from 'axios';
+import {useState, useEffect} from 'react';
+
 function Products() {
+  const [product, setProduct] = useState([]);
+  //fetch data from the api with useEffect
+  useEffect(() => {
+      fetch('https://fakestoreapi.com/products')
+      .then(res => res.json())
+      .then(result => setProduct(result))
+  }, []);
 
   return (
-    <div className="grid">
+    
+    <div key={product.id} className="grid">
+      {product.map((item) => (
                 <div className="product">
-                    <img src="https://images.unsplash.com/photo-1606406054219-619c4c2e2100?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="girl" />
-                    <h3>Product description</h3>
-                    <h2>Price: $45</h2>
+                        <img src={item.image} alt="girl" />
+                    <h3>{item.title}</h3>
+                    <h2>Price: ${item.price}</h2>
                 </div>
-                <div className="product">
-                    <img src="https://images.unsplash.com/photo-1606406054219-619c4c2e2100?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="girl" />
-                    <h3>Product description</h3>
-                    <h2>Price: $45</h2>
-                </div>
-                <div className="product">
-                    <img src="https://images.unsplash.com/photo-1606406054219-619c4c2e2100?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="girl" />
-                    <h3>Product description</h3>
-                    <h2>Price: $45</h2>
-                </div>
-                <div className="product">
-                    <img src="https://images.unsplash.com/photo-1606406054219-619c4c2e2100?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="girl" />
-                    <h3>Product description</h3>
-                    <h2>Price: $45</h2>
-                </div>
-                <div className="product">
-                    <img src="https://images.unsplash.com/photo-1606406054219-619c4c2e2100?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="girl" />
-                    <h3>Product description</h3>
-                    <h2>Price: $45</h2>
-                </div>
-                <div className="product">
-                    <img src="https://images.unsplash.com/photo-1606406054219-619c4c2e2100?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="girl" />
-                    <h3>Product description</h3>
-                    <h2>Price: $45</h2>
-                </div>
-                <div className="product">
-                    <img src="https://images.unsplash.com/photo-1606406054219-619c4c2e2100?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="girl" />
-                    <h3>Product description</h3>
-                    <h2>Price: $45</h2>
-                </div>
-                <div className="product">
-                    <img src="https://images.unsplash.com/photo-1606406054219-619c4c2e2100?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="girl" />
-                    <h3>Product description</h3>
-                    <h2>Price: $45</h2>
-                </div>      
+      ))}
     </div>
   )
 }
