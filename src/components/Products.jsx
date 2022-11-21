@@ -21,7 +21,7 @@ function Products() {
           {/*  <Link to={`/Description/${item.id}`} > */}
           <div className="product-picture">
             <Link to="/Description">
-              <img src={item.image} alt="girl" />
+              <img src={item.image} alt="product" />
             </Link>
           </div>
           <h3>{item.title}</h3>
