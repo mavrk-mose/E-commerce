@@ -1,0 +1,23 @@
+.product-container {
+    display: column;
+}
+.product-container h3 {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    right: 20%;
+    color: hsl(183, 63%, 49%);
+    font-size: 1.75em;
+}
+.products {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.products img {
+    height: 65vh;
+    width: 30vw;
+    border-radius: 50%;
+    object-fit: cover;
+}

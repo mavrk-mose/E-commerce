@@ -25,13 +25,29 @@ a, a:hover, a:focus, a:active {
     margin: 5% 0 5% 0;
     width: 80vw;
 }
-.grid img {
-    height: 50vh;
-    width: 20vw;
-    padding: 5% 0 5% 0;
-    object-fit: cover;
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-
+.product-picture {
+    height: 55vh;
+    width: 20vw;
+    object-fit: cover;
+    margin-bottom: 20%;
+}
+.grid img {
+    height: 100%;
+    width: 100%;
+    padding: 5% 0 5% 0;
+    transition: all 0.5s ease;
+}
+.grid img:hover  {
+    transform: scale(1.1);
+}
+    
 @media screen and (max-width: 700px){
     .grid {
         grid-template-columns: repeat(1, 1fr);
