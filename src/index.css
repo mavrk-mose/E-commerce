@@ -8,12 +8,12 @@
   }
 body {
     background-color: hsl(220, 16%, 96%);
-    font-family: Inter, Sans-Serif;
+    font-family: 'Inter', Sans-Serif;
 
 }
 h1 {
     font-family: 'Inter';
-    font-size: 30px;
+    font-size: 1.875em;
     font-weight: 400;
     line-height: 4em;
     letter-spacing: 0em;

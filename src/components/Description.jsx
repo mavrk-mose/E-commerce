@@ -1,9 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {useState, useEffect} from 'react';
+import { Link, useParams } from 'react-router-dom'
 import './Description.css'
 function Description() {
-  
-  
+  const [product, setProduct] = useState([]);
+  const {id} = useParams();
+  //fetch data from api for single product
+  useEffect(() => {
+    fetch(`https://fakestoreapi.com/products/${id}`)
+      .then(res => res.json())
+      .then(result => setProduct(result))
+      .catch(err => console.log(err)) 
+  }, [id]);
+    
   return (
     <div className="product-container">
         <div className="navbar">
@@ -23,17 +32,17 @@ function Description() {
           <h3>Description</h3>
         <div className="products">
             <div className="product-img">
-              <img src="https://images.unsplash.com/photo-1606406054219-619c4c2e2100?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="" />  
+              <img src={product.image} alt="" />  
             </div>
             <div className="product-description">
-              <h1>Product Title</h1>
-              <h2>Product category</h2>
-              <h2>Product Description</h2>
-              <h2>Product rating</h2>
-              <h2>In Stock: {}</h2>
-              <h2>Price: $</h2>
+              <h1>{product.title}</h1>
+              <h2>{product.category}</h2>
+              <p>{product.description}</p>
+              {product.rating ? <h2>{product.rating.rate}/10</h2> : null}
+              {product.rating ? <h2>In Stock: {product.rating.count}</h2> : null}
+              <h2>Price: ${product.price}</h2>
               <Link to="/Cart">
-                <button onClick="" id='cart-button'>Add to Cart</button>
+                <button id='cart-button'>Add to Cart</button>
               </Link>
             </div>
         </div>
