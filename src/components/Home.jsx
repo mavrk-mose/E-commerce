@@ -14,16 +14,13 @@ function Home() {
                             <h1>Home</h1>
                         </Link>
                         </li>
-                    
                         <li>
                         <Link to="/Cart">
                             <h1>Cart</h1>
                         </Link>
                         </li>
-                    
             </ul>    
         </div>
-
         <div className="heading">
                 <h1>
                     Products
