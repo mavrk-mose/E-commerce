@@ -10,10 +10,10 @@ function App() {
           <Route index path="/" element={<Home/>}/>
         </Routes>
         <Routes>
-          <Route path="/cart" element={<Cart/>}/>
+          <Route exact path="/cart" element={<Cart/>}/>
         </Routes>
         <Routes>
-          <Route path="/description" element={<Description/>}/>
+          <Route exact path="/description" element={<Description/>}/>
         </Routes>
     </Router>
   )
