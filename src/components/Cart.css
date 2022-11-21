@@ -1,48 +1,108 @@
 .cart-container {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100%;
+    margin-bottom: 5%;
 }
-.cart-container .navbar {
+.navbar {
     display: flex;
-    right: 0;
-    width: 100%;
-    margin: 5% 0 25% 5%;
-
+    width: 90%;
 }
-.cart-container .navbar ul{
+.navbar ul{
     display: flex;
     justify-content:space-between;
     list-style-type: none;
     width: auto;
     gap:3em;
 }
+.cart-heading {
+    height: 5vh;
+    font-size: 1.125em;
+    font-weight: 600;
+}
+.items h4 {
+    font-size: 1.125em;
+    font-weight: 600;
+    margin-top: 5%;
+}
+.items h5 {
+    font-size: 1.5em;
+    font-weight: 500;
+    line-height: 1.125em;
+}
 .cart-boxes {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 90vh;
+    width: 90%;
+    margin-top: 1%;
 }
 .shopping-cart{
   display: flex;  
   flex-direction: column;
-  gap:50px 5px;
 }
 .product-details {
     display: flex;
-    box-shadow: 0 0 10px 0 rgba(54, 52, 52, 0.2);
-    width: 80vw;
-    height: 30vh;
-    gap: 2em;
+    justify-content:space-around;
+    align-items: center;
+    box-shadow: 0 0 10px 0 hsla(0, 2%, 21%, 0.2);
+    border-radius: 0.9375em;
+    width: 50vw;
+    height: 20vh;
+    margin-top: 2%;  
 }
 .product-details img {
-    width: 25%;
-    height: 45%;
+    width: 15.75%;
+    height: 85%;
     object-fit: cover;
-    border-radius: 2em;
+    border-radius: .5em;
 }
-.bg-img{
+
+.checkout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: hsl(238, 43%, 54%);
-    border-radius: 1.5em;
+    border-radius: 1.25em;
+    width: 30vw;
+    height: 80vh;
+    color: hsl(0, 0%, 100%);
+}
+.checkout-heading {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.checkout-heading img{
+    width: 20%;
+    height: 40%;
+    object-fit: cover;
+    border-radius: .5em;
+}
+.grid-checkout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1em;
+    width: 10vw;
+    margin-bottom: 0;
+}
+.card-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 5vh;
+    margin: 0 0 15% 2%;
+}
+input  {
+    width: 30%;
+    height: 5vh;
+    border: none;
+    border-radius: .5em;
 }

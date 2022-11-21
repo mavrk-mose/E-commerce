@@ -16,7 +16,8 @@ function Products() {
     <div key={product.id} className="grid">
       {product.map((item) => (
                 <div className="product">
-                      <Link to={`/Description/${item.id}`} >
+                     {/*  <Link to={`/Description/${item.id}`} > */}
+                        <Link to="/Description">
                         <img src={item.image} alt="girl" />
                       </Link>    
                     <h3>{item.title}</h3>
