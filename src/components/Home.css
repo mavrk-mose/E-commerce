@@ -51,7 +51,7 @@ a, a:hover, a:focus, a:active {
 @media screen and (max-width: 700px){
     .grid {
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows:repeat();
+        grid-template-rows:repeat(3, 1fr);
         grid-gap: 1.5em;
     }
     .grid img{
@@ -60,10 +60,17 @@ a, a:hover, a:focus, a:active {
     }
     .product {
         display: flex;
+        position: relative;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
         margin: 5% 0 5% 0;
+    }
+    .product h3 {
+        position: absolute;
+    }
+    .product h2{
+        position: absolute;
     }
 }
