@@ -2,6 +2,7 @@ import React from 'react'
 import {useState, useEffect} from 'react';
 import { Link, useParams } from 'react-router-dom'
 import './Description.css'
+
 function Description() {
   const [product, setProduct] = useState([]);
   const {id} = useParams();
@@ -42,7 +43,7 @@ function Description() {
               {product.rating ? <h2>In Stock: {product.rating.count}</h2> : null}
               <h2>Price: ${product.price}</h2>
               <Link to="/Cart">
-                <button id='cart-button'>Add to Cart</button>
+                <button id='cart-button'>ADD TO CART</button>
               </Link>
             </div>
         </div>

@@ -32,3 +32,11 @@
     justify-content: flex-end;
     width: 40vw;
 }
+#cart-button {
+    background-color: purple;
+    border: none;
+    border-radius: 10%;
+    color: white;
+    height: 1.5em;
+    width: auto;
+}

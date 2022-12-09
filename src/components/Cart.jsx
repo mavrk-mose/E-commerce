@@ -8,7 +8,8 @@ import Seeall from '../assets/images/Rectangle 12.svg'
 import './Cart.css'
 
 function Cart() {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
+  
   return (
     <div className="cart-container">
       <div className="navbar">

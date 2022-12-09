@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 function Products() {
   const [product, setProduct] = useState([]);
 
@@ -11,11 +12,11 @@ function Products() {
         .then(result => setProduct(result))
         .catch(err => console.log(err))
     }, []); 
-
+    
   return (
   <div className='grid'>
       {product.map((item) => (
-      <div key={product.id} className="product">
+      <div key={item.id} className="product">
         <div className="product-picture">
          <Link to={`/Description/${item.id}`}>
             <img src={item.image} alt="product" />
