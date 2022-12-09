@@ -1,1 +1,1 @@
-# https://e-commerce-ellipsis.vercel.app/
+https://e-commerce-ellipsis.vercel.app/
