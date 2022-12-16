@@ -1,18 +1,14 @@
 import React from 'react'
-import {useState, useEffect} from 'react';
+import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import './Description.css'
 
-function Description() {
-  const [product, setProduct] = useState([]);
-  const {id} = useParams();
-  //fetch data from api for single product
+function Description(props) {
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-      .then(res => res.json())
-      .then(result => setProduct(result))
-      .catch(err => console.log(err)) 
-  }, [id]);
+    fetchItem(
+      `https://fakestoreapi.com/products/${props.match.params.id}`
+    );
+  }, []);
     
   return (
     <div className="product-container">

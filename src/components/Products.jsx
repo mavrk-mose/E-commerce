@@ -16,16 +16,21 @@ function Products() {
   return (
   <div className='grid'>
       {product.map((item) => (
-      <div key={item.id} className="product">
-        <div className="product-picture">
-         <Link to={`/Description/${item.id}`}>
-            <img src={item.image} alt="product" />
+        <div key={item.id} className="product">
+          <div className="product-picture">
+          <Link to={{
+            pathname:`/Description/${item.id}`,
+            state: {product} 
+          }} >
+              <img src={item.image} alt="product" />
           </Link>
+          </div>
+          <div className="title">
+              <h3>{item.title}</h3>
+              <h2>Price: ${item.price}</h2>
+          </div>
         </div>
-        <h3>{item.title}</h3>
-        <h2>Price: ${item.price}</h2>
-      </div>
-    ))}
+      ))}
   </div>
   )
 }
